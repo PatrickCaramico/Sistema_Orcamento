@@ -1,0 +1,330 @@
+:root {
+    --fundo: #F1F3F2;
+    --card: #FFFFFF;
+    --fonte: #D9D9D9;
+    --button: #84A98C;
+    --shadow-box: 0 10px 25px rgba(0, 0, 0, 0.05);
+    --texto-carvao: #2F3E46;
+}
+
+/* Reset básico para tirar margens padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 3.2rem;
+    color: var(--texto-carvao);
+}
+
+.rodape-site {
+    position: fixed;
+    bottom: 0.9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: #60706a;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid #e2e7e4;
+    border-radius: 999px;
+    padding: 0.4rem 0.8rem;
+    backdrop-filter: blur(2px);
+}
+
+/* 2. O Card do Formulário */
+.card {
+    background-color: var(--card);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-box);
+    width: 100%;
+    max-width: 450px;
+    transition: max-width 0.35s ease, transform 0.35s ease;
+}
+
+.card-com-resultado {
+    max-width: 980px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    animation: expandir-card 0.4s ease;
+}
+
+.card-com-resultado h1 {
+    grid-column: 1 / -1;
+    margin-bottom: 0.5rem;
+}
+
+.card-com-resultado .formulario {
+    padding-right: 1.5rem;
+    border-right: 1px solid #E8ECEA;
+    animation: deslocar-form 0.35s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: var(--button);
+}
+
+.campo_usuario {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    padding: 0.8rem;
+    border: 1px solid #D1D5D4;
+    border-radius: 8px;
+    background-color: #FAFAFA;
+    outline: none;
+    transition: border 0.3s;
+}
+
+textarea {
+    padding: 0.8rem;
+    border: 1px solid #D1D5D4;
+    border-radius: 8px;
+    background-color: #FAFAFA;
+    outline: none;
+    transition: border 0.3s;
+    resize: vertical;
+    min-height: 88px;
+}
+
+.contador-descricao {
+    margin-top: 0.4rem;
+    text-align: right;
+    color: #6d7a75;
+    font-size: 0.78rem;
+}
+
+.contador-descricao.limite {
+    color: #b54708;
+    font-weight: 600;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid var(--button);
+}
+
+.campo-duplo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--button);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #6B8E73;
+    transform: translateY(-2px);
+}
+
+.acoes-form {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.acoes-form button {
+    flex: 1;
+}
+
+.botao-secundario {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #D1D5D4;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--texto-carvao);
+    background-color: #FAFAFA;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.botao-secundario:hover {
+    background-color: #eef2f0;
+    transform: translateY(-2px);
+}
+
+input[type="range"] {
+    accent-color: var(--button);
+    margin: 1rem 0;
+}
+
+.campo-valor-hora {
+    display: grid;
+    grid-template-columns: 1fr 110px;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.campo-valor-hora input[type="range"] {
+    margin: 0;
+}
+
+.valor-hora-digitado {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid #D1D5D4;
+    border-radius: 8px;
+    background-color: #FAFAFA;
+    padding: 0.55rem 0.6rem;
+}
+
+.valor-hora-digitado span {
+    font-weight: 600;
+    color: var(--texto-carvao);
+}
+
+#valor_hora_input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: 600;
+    color: var(--texto-carvao);
+}
+
+#resultado {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #F8F9F8;
+    border-radius: 8px;
+    text-align: left;
+    color: var(--texto-carvao);
+}
+
+#resultado .resultado-titulo {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--button);
+    margin-bottom: 0.8rem;
+}
+
+#resultado p {
+    margin-bottom: 0.35rem;
+}
+
+#resultado h2 {
+    margin-top: 0.9rem;
+    text-align: center;
+    color: var(--button);
+}
+
+.botao-pdf {
+    margin-top: 1rem;
+}
+
+.card-com-resultado #resultado {
+    margin-top: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: revelar-resultado 0.45s ease;
+}
+
+@keyframes expandir-card {
+    from {
+        max-width: 450px;
+    }
+    to {
+        max-width: 980px;
+    }
+}
+
+@keyframes deslocar-form {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-6px);
+    }
+}
+
+@keyframes revelar-resultado {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .card-com-resultado,
+    .card-com-resultado .formulario,
+    .card-com-resultado #resultado {
+        animation: none;
+        transition: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .card-com-resultado {
+        max-width: 520px;
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .card-com-resultado h1 {
+        grid-column: auto;
+    }
+
+    .card-com-resultado .formulario {
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .card-com-resultado #resultado {
+        margin-top: 0.5rem;
+    }
+
+    .acoes-form {
+        flex-direction: column;
+    }
+
+    .campo-valor-hora {
+        grid-template-columns: 1fr;
+    }
+}
