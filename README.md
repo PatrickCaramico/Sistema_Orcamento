@@ -9,10 +9,9 @@ Gerador de orcamentos para freelancers com foco em `$_POST`, logica matematica e
 
 ## Preview
 
-> Adicione aqui um print da tela principal (opcional)
->
+> 
 > Exemplo:
-> `![Preview](./Sistema_Orcamento_V1/assets/images/preview.png)`
+> ![Preview](Sistema_Orcamento_V1/assets/images/Projeto_SistemaV1.gif)
 
 ## Funcionalidades
 
